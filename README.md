@@ -1,78 +1,106 @@
-🚦 Análise de Acidentes de Trânsito em Belo Horizonte (2021)
-Clusterização aplicada à segurança viária utilizando Machine Learning
 
-Este repositório contém a análise apresentada no artigo desenvolvido para o XLIII Encontro Nacional de Engenharia de Produção (ENEGEP – 2023), cujo objetivo foi identificar padrões em acidentes de trânsito ocorridos na cidade de Belo Horizonte (MG) durante o ano de 2021.
+# 🚦 Análise de Acidentes de Trânsito em Belo Horizonte – 2021  
+**Clusterização aplicada à segurança viária usando Machine Learning**
 
-Por meio de técnicas de Mineração de Dados e Aprendizado de Máquina não supervisionado, foi possível agrupar acidentes com características semelhantes, favorecendo interpretações relevantes para o setor público, segurança urbana, e gestão de tráfego.
+Este repositório apresenta os resultados do estudo desenvolvido para o **XLIII ENEGEP (2023)**, com o objetivo de identificar padrões em acidentes de trânsito ocorridos em Belo Horizonte durante o ano de 2021. Foram utilizadas técnicas de **Mineração de Dados** e **Aprendizado de Máquina Não Supervisionado**, visando apoiar tomadas de decisão relacionadas à segurança viária e políticas públicas.
 
-📄 Objetivo do estudo
+---
 
-Agrupar acidentes de trânsito em Belo Horizonte utilizando K-Means e Clusterização Hierárquica, para identificar padrões associados a:
+## 📄 Objetivo do Projeto
 
-Tipo e severidade do acidente
+Agrupar acidentes de trânsito com características semelhantes utilizando algoritmos de **clusterização**, permitindo identificar padrões relacionados a:
 
-Condições climáticas
+- Tipo e severidade do acidente  
+- Clima e pavimentação da via  
+- Datas comemorativas e feriados  
+- Tipo e quantidade de veículos envolvidos  
+- Perfil dos condutores  
+- Índices de fatalidade
 
-Pavimentação e horário
+---
 
-Quantidade e tipo de veículos envolvidos
+## 📊 Base de Dados Utilizada
 
-Presença de feriados e finais de semana
+Os dados foram disponibilizados pela Prefeitura de Belo Horizonte no portal de dados abertos. Três conjuntos principais foram processados e consolidados.
 
-Frequência de fatalidades
+| Dataset | Descrição | Registros |
+|--------|-----------|----------|
+| 1 | Dados gerais do acidente | 11.122 |
+| 2 | Características dos indivíduos envolvidos | 23.736 |
+| 3 | Informações dos veículos | 20.506 |
 
-O estudo visa apoiar políticas públicas com base em evidências, fornecendo insights úteis para estratégias de prevenção e redução de riscos.
+Após filtros, tratamento de ausências e normalização:  
+➡ **4.562 instâncias finais**  
+➡ **31 variáveis pré-processadas**
 
-📊 Base de Dados
+---
 
-Foram utilizados três conjuntos de dados públicos, disponibilizados pela Prefeitura de Belo Horizonte, totalizando mais de 11 mil registros iniciais, posteriormente tratados e unificados.
+## 🔍 Metodologia
 
-Dataset	Conteúdo	Instâncias
-1	Características do acidente	11.122
-2	Características dos indivíduos	23.736
-3	Características dos veículos	20.506
+### 🧹 1. Tratamento e Preparação dos Dados
+- Junção dos três conjuntos usando Nº do boletim de ocorrência  
+- Criação de novas variáveis (horário, contagem de veículos, envolvimento feminino/masculino, embriaguez etc.)  
+- Remoção e imputação de dados faltantes  
+- Normalização para intervalo `[0,1]`  
 
-Após limpeza, criação de novas variáveis e normalização, o conjunto final contou com:
+### 🤖 2. Modelagem — Clusterização
+Algoritmos aplicados:
 
-✔ 4.562 registros
-✔ 31 variáveis tratadas e padronizadas
+| Algoritmo | Tipo | Utilização |
+|---|---|---|
+| K-Means | Não supervisionado | Formação dos clusters principais |
+| Hierárquico (Aglomerativo) | Não supervisionado | Análise comparativa de agrupamento |
 
-🔍 Metodologia
+Número ideal de grupos definido via:
 
-Pré-processamento e fusão das bases
+- Método do Cotovelo (Elbow)
+- Dendrograma
+- Coeficiente Silhouette  
+📌 Melhor estrutura: **6 clusters**
 
-Tratamento de dados ausentes
+---
 
-Geração de novas variáveis
+## 📈 Resultados Relevantes
 
-Normalização no intervalo [0,1]
+- Regiões com maior volume de acidentes estão concentradas na área **Centro-Sul de BH**
+- Acidentes apresentaram variação significativa em relação ao **clima**
+- **Atropelamentos em dias chuvosos mostraram maior taxa de fatalidade**
+- Feriados apresentaram incidência ligeiramente maior de ocorrências
+- **Homens estiveram presentes em ~95% dos casos analisados**
+- Clusters distintos foram formados com base em tipo de acidente, pavimento e severidade
 
-Aplicação dos algoritmos
+---
 
-K-Means
+## 🧠 Ferramentas Utilizadas
 
-Hierarchical Clustering (aglomerativo)
+| Tecnologia | Finalidade |
+|---|---|
+| Python + Jupyter Notebook | Análise exploratória e clustering |
+| Pandas / NumPy | Tratamento e organização dos dados |
+| sklearn (Scikit-Learn) | Execução dos algoritmos de clusterização |
+| Matplotlib / Seaborn | Visualização gráfica |
+| Excel | Pré-tratamento inicial dos datasets |
 
-Definição do número de grupos
+---
 
-Método do Cotovelo (Elbow)
+## 📎 Documento do Artigo
 
-Dendrograma
+📄 **Arquivo incluído no repositório:**  
+`Acidentes BH Corpo-Artigo-ENEGEP-2023-FINAL.pdf`
 
-Métrica da Silhueta ✓ melhor desempenho com 6 clusters
+---
 
-📈 Principais Resultados
+## 🚀 Próximos Passos (Possíveis Extensões)
 
-🔹 Os dois algoritmos apresentaram agrupamentos semelhantes
-🔹 Acidentes foram influenciados por clima, pavimentação e feriados
-🔹 Atropelamentos em dias de chuva mostraram maior índice de fatalidade
-🔹 A região Centro-Sul concentrou mais ocorrências, refletindo maior tráfego urbano
-🔹 Homens estiveram envolvidos em quase 95% dos acidentes
+- Análise preditiva com modelos supervisionados  
+- Dashboard interativo com Streamlit / Power BI / Dash  
+- Inclusão de dados dos próximos anos para estudo evolutivo  
+- Georreferenciamento com mapas interativos
 
-🧠 Tecnologias utilizadas
-Ferramenta	Uso
-Python + Jupyter	Análise e Clusterização
-Pandas / NumPy	Pré-processamento
-Scikit-Learn	Modelagem e agrupamento
-Matplotlib / Seaborn	Visualização gráfica
-Excel	Limpezas preliminares
+---
+
+## 📌 Autor(es)
+
+Este repositório documenta o estudo acadêmico voltado para análise de acidentes urbanos utilizando ciência de dados aplicada ao transporte.
+
+📬 Contribuições, issues e melhorias são bem-vindas!
