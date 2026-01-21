@@ -8,7 +8,7 @@ https://doi.org/10.14488/ENEGEP2023_TN_ST_401_1975_46517
 
 ---
 
-## 📄 Objetivo do Projeto
+## Objetivo do Projeto
 
 Agrupar acidentes de trânsito com características semelhantes utilizando algoritmos de **clusterização**, permitindo identificar padrões relacionados a:
 
@@ -21,7 +21,7 @@ Agrupar acidentes de trânsito com características semelhantes utilizando algor
 
 ---
 
-## 📊 Base de Dados Utilizada
+## Base de Dados Utilizada
 
 Os dados foram disponibilizados pela Prefeitura de Belo Horizonte no portal de dados abertos. Três conjuntos principais foram processados e consolidados.
 
@@ -37,15 +37,15 @@ Após filtros, tratamento de ausências e normalização:
 
 ---
 
-## 🔍 Metodologia
+## Metodologia
 
-### 🧹 1. Tratamento e Preparação dos Dados
+### 1. Tratamento e Preparação dos Dados
 - Junção dos três conjuntos usando Nº do boletim de ocorrência  
 - Criação de novas variáveis (horário, contagem de veículos, envolvimento feminino/masculino, embriaguez etc.)  
 - Remoção e imputação de dados faltantes  
 - Normalização para intervalo `[0,1]`  
 
-### 🤖 2. Modelagem — Clusterização
+### 2. Modelagem — Clusterização
 Algoritmos aplicados:
 
 | Algoritmo | Tipo | Utilização |
@@ -58,11 +58,11 @@ Número ideal de grupos definido via:
 - Método do Cotovelo (Elbow)
 - Dendrograma
 - Coeficiente Silhouette  
-📌 Melhor estrutura: **6 clusters**
+   Melhor estrutura: **6 clusters**
 
 ---
 
-## 📈 Resultados Relevantes
+## Resultados Relevantes
 
 - Regiões com maior volume de acidentes estão concentradas na área **Centro-Sul de BH**
 - Acidentes apresentaram variação significativa em relação ao **clima**
@@ -73,7 +73,7 @@ Número ideal de grupos definido via:
 
 ---
 
-## 🧠 Ferramentas Utilizadas
+## Ferramentas Utilizadas
 
 | Tecnologia | Finalidade |
 |---|---|
