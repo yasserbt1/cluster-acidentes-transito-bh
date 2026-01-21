@@ -3,6 +3,8 @@
 **Clusterização aplicada à segurança viária usando Machine Learning**
 
 Este repositório apresenta os resultados do estudo desenvolvido para o **XLIII ENEGEP (2023)**, com o objetivo de identificar padrões em acidentes de trânsito ocorridos em Belo Horizonte durante o ano de 2021. Foram utilizadas técnicas de **Mineração de Dados** e **Aprendizado de Máquina Não Supervisionado**, visando apoiar tomadas de decisão relacionadas à segurança viária e políticas públicas.
+TÉCNICAS DE AGRUPAMENTO PARA A ANÁLISE DE ACIDENTES DE TR NSITO NA CIDADE DE BELO HORIZONTE - MINAS GERAIS NO ANO DE 2021
+https://doi.org/10.14488/ENEGEP2023_TN_ST_401_1975_46517
 
 ---
 
@@ -80,10 +82,3 @@ Número ideal de grupos definido via:
 | sklearn (Scikit-Learn) | Execução dos algoritmos de clusterização |
 | Matplotlib / Seaborn | Visualização gráfica |
 | Excel | Pré-tratamento inicial dos datasets |
-
----
-
-## 📎 Documento do Artigo
-
-TÉCNICAS DE AGRUPAMENTO PARA A ANÁLISE DE ACIDENTES DE TR NSITO NA CIDADE DE BELO HORIZONTE - MINAS GERAIS NO ANO DE 2021
-https://doi.org/10.14488/ENEGEP2023_TN_ST_401_1975_46517
