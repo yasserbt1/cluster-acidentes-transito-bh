@@ -32,8 +32,8 @@ Os dados foram disponibilizados pela Prefeitura de Belo Horizonte no portal de d
 | 3 | Informações dos veículos | 20.506 |
 
 Após filtros, tratamento de ausências e normalização:  
-➡ **4.562 instâncias finais**  
-➡ **31 variáveis pré-processadas**
+ **4.562 instâncias finais**  
+ **31 variáveis pré-processadas**
 
 ---
 
